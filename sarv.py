@@ -18,7 +18,7 @@ class ValidationError(Error):
 class InvalidKeyError(Error):
     pass
 
-ROOT = 'http://master.us.sarv.email:7278/'
+ROOT = 'http://master.us.sarv.email:7279/v1.0/'
 ERROR_MAP = {
     'ValidationError': ValidationError,
     'Invalid_Key': InvalidKeyError
