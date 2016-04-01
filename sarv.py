@@ -113,6 +113,16 @@ class Messages(object):
             _params['raw_message'] = raw_message
 
         return self.master.call('messages/senRaw', _params)
+    
+    def getMessageInfo(self, x_unique_id=None, skip_page=None):
+        _params = {}
+        if not x_unique_id is None:
+            _params['x_unique_id'] = x_unique_id
+
+        if not skip_page is None:
+            _params['skip_page'] = skip_page
+
+        return self.master.call('messages/getMessageInfo', _params)
 
 
 
@@ -291,3 +301,11 @@ class Settings(object):
         _params = {}
 
         return self.master.call('settings/listWebhook', _params)
+    
+    def getWebhookInfo(self, webhook_id=None):
+        _params = {}
+
+        if not webhook_id is None:
+            _params['webhook_id'] = webhook_id
+
+        return self.master.call('settings/getWebhookInfo', _params)
