@@ -42,7 +42,7 @@ class Sarv(object):
         if appDomain is None: raise Error('You must provide a You must provide a Sarv TES DOMAIN')
         self.owner_id = owner_id
         self.apikey = apikey
-        self.root='http://'+appDomain+':7278/v1.0/'
+        self.root='http://api.'+appDomain+'/v1.0/'
 
         self.messages = Messages(self)
         self.account = Account(self)
