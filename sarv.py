@@ -103,6 +103,15 @@ class Messages(object):
             _params['message'] = message
 
         return self.master.call('messages/sendMail', _params)
+    def sendTemplate(self, smtp_user_name=None, message=None):
+        _params = {}
+        if not smtp_user_name is None:
+            _params['smtp_user_name'] = smtp_user_name
+
+        if not message is None:
+            _params['message'] = message
+
+        return self.master.call('messages/sendTemplate', _params) 
 
     def senRaw(self, smtp_user_name=None, raw_message=None):
         _params = {}
